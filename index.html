@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejemplo de uso de web.config</title>
+</head>
+
+<body>
+  <h1>Mi página web</h1>
+  <p>La siguiente variable se ha cargado desde el archivo web.config perteneciente a Producción:</p>
+  <h2 id="mensaje"></h2>
+
+  <script>
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "/web.config", true);
+    xhr.onload = function () {
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(xhr.responseText, "text/xml");
+      const miVariable = xml.querySelector('appSettings > add[key="MiVariable"]').getAttribute("value");
+      document.getElementById("mensaje").innerHTML = miVariable;
+    };
+    xhr.send();
+  </script>
+</body>
+
+</html>
