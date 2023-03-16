@@ -6,9 +6,8 @@
 </head>
 
 <body>
-  <h1>Pre-Produccion</h1>
-  <p>La siguiente variable se ha cargado desde el archivo web.config perteneciente a Pre-Producción:</p>
-  <h2 id="mensaje"></h2>
+  <h1 id="mensaje"></h1>
+  <p>La siguiente variable se ha cargado desde el archivo web.config perteneciente a Producción:</p>
 
   <script>
     const xhr = new XMLHttpRequest();
@@ -22,5 +21,16 @@
     xhr.send();
   </script>
 </body>
-
 </html>
+<!--
+
+git config --global user.name "FabianLopezMagnan"
+git config --global user.email "fabianlopezmagnan@gmail.com"
+git config --list
+
+git remote set-url origin https://USERNAME:TOKEN@github.com/USER/REPO.git
+
+git add .
+git status
+git commit -m "Se agrego una plantilla de proyectos"
+git push -u origin main
